@@ -26,7 +26,10 @@ pipeline {
         stage('test') {
 
             steps{
-                sh 'test -f build/index.html'
+                sh '''
+                  test -f build/index.html
+                  test -f src/App.js
+                  test -f src/App.test.js
             }
         }
 
